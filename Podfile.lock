@@ -1,0 +1,41 @@
+PODS:
+  - BlueCryptor (1.0.30)
+  - BlueECC (1.2.3)
+  - BlueRSA (1.0.33)
+  - KituraContracts (1.1.2):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.0):
+    - Logging (~> 1.1)
+  - Logging (1.1.0)
+  - SwiftJWT (3.5.0):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.1)
+    - LoggerAPI (~> 1.7)
+
+DEPENDENCIES:
+  - SwiftJWT
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BlueCryptor
+    - BlueECC
+    - BlueRSA
+    - KituraContracts
+    - LoggerAPI
+    - Logging
+    - SwiftJWT
+
+SPEC CHECKSUMS:
+  BlueCryptor: 4383d06f0eb493da9940da1d0d3fc802cb600960
+  BlueECC: 271b5d6b240b9d3a2c458a2105a6c3b54da6dba1
+  BlueRSA: c7da18bc79b79af324d5b42743ba1acc37a76a24
+  KituraContracts: fdb9576d40d1ac737765128158bfd412705b1c3b
+  LoggerAPI: fb78461eedac5316b290f2404d88b9d614d96c57
+  Logging: 0f0b5d7d124fab770fde88cf942cb57a63804236
+  SwiftJWT: 7bb95c42c1cc973b11797874bb6e8552785ed733
+
+PODFILE CHECKSUM: 02653f05fd3dda8df2febbf42a6cb7d01dd3a8ed
+
+COCOAPODS: 1.6.1
