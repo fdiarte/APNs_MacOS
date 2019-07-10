@@ -1,4 +1,4 @@
-## Preparing to a send notification
+## Preparing to send a notification
 
 * Add the Bundle Identifier for the app you want to send the notification to by selecting **`Add BundleId`** button and enter the Bundle Identifier you want. Alternatively, you can import a **.csv** file in the following format `Project Name` `BundleId`.
 
@@ -37,11 +37,11 @@ Additionally, you can add onto the payload to send additional information to the
 “messageID” : “ABCDEFGHIJ”
 }
 ```
-## Successfully sending notification
+## Successfully sending a notification
 
 If the notification is successfully sent, a label on the bottom left side will show with the device name / device token of the device that the notification was sent to .
 
-## Error sending notification
+## Error sending a notification
 
 If there is an error while sending a notification, an alert will display giving you the reason. If you get `TooManyRequests` wait a couple minutes before sending another notification to that device as Apple may think that you are spamming that device with too many notifications. 
 
