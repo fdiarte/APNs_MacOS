@@ -11,21 +11,22 @@ import SwiftJWT
 
 class APNSController {
     
-    static func sendNotification(contact: String, bundleId: String, payload: String, privateKey: String, teamId: String, keyId: String, apnsEnviornment: APNSEnviornment, success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
+    private let dateKey = "ISSUED_DATE"
+    private var token: String? = nil
+    
+    func sendNotification(contact: String, bundleId: String, payload: String, privateKey: String, teamId: String, keyId: String, apnsEnviornment: APNSEnviornment, success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
         
         let urlString = apnsEnviornment == .sandbox ? "https://api.sandbox.push.apple.com:443/3/device/" : "https://api.push.apple.com:443/3/device/"
         
         guard let url = URL(string: urlString + contact) else { return }
         
-        let signer = JWTSigner.es256(privateKey: Data(privateKey.utf8))
-        let claims = ClaimsStandardJWT(iss: teamId, iat: Date())
-        let header = Header(kid: keyId)
-        var jwt = JWT(header: header, claims: claims)
+        checkSavedTime(privateKey: privateKey, teamId: teamId, keyId: keyId)
         
-        let signedJWT = try! jwt.sign(using: signer)
+        let apnsToken = token ?? createNewToken(privateKey: privateKey, teamId: teamId, keyId: keyId)
+        self.token = apnsToken
         
         let headers: [String: String] = ["Content-Type": "application/json",
-                                         "Authorization": "bearer \(signedJWT)",
+                                         "Authorization": "bearer \(apnsToken)",
                                          "apns-expiration": "0",
                                          "apns-priority": "10",
                                          "apns-topic": bundleId]
@@ -68,11 +69,32 @@ class APNSController {
             
         }.resume()
     }
-}
-
-extension String {
-    func encodeToJSONData() -> Data? {
-        guard let jsonData = try? JSONEncoder().encode(self) else { return nil }
-        return jsonData
+    
+    private func createNewToken(privateKey: String, teamId: String, keyId: String) -> String {
+        let signer = JWTSigner.es256(privateKey: Data(privateKey.utf8))
+        let claims = ClaimsStandardJWT(iss: teamId, iat: Date())
+        let header = Header(kid: keyId)
+        var jwt = JWT(header: header, claims: claims)
+        
+        return try! jwt.sign(using: signer)
+    }
+    
+    private func checkSavedTime(privateKey: String, teamId: String, keyId: String) {
+        let now = Date()
+        let hourInSeconds = 3600.0
+        
+        guard let savedDate = UserDefaults.standard.value(forKey: dateKey) as? Date else {
+            UserDefaults.standard.set(now, forKey: dateKey)
+            UserDefaults.standard.synchronize()
+            self.token = createNewToken(privateKey: privateKey, teamId: teamId, keyId: keyId)
+            return
+        }
+        
+        if (savedDate.timeIntervalSince1970 - now.timeIntervalSince1970) > hourInSeconds {
+            UserDefaults.standard.set(now, forKey: dateKey)
+            UserDefaults.standard.synchronize()
+            
+            self.token = createNewToken(privateKey: privateKey, teamId: teamId, keyId: keyId)
+        }
     }
 }

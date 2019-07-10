@@ -39,6 +39,8 @@ class ViewController: NSViewController {
     var apps: [App]?
     var apnsEnviornment: APNSEnviornment = .sandbox
     
+    private let apnsController = APNSController()
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -242,7 +244,7 @@ class ViewController: NSViewController {
         
         notificationSuccessLabel.stringValue = ""
         
-        APNSController.sendNotification(contact: contact,
+        apnsController.sendNotification(contact: contact,
                                         bundleId: bundleId,
                                         payload: payload,
                                         privateKey: key,
