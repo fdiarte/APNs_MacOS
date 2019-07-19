@@ -266,7 +266,11 @@ class ViewController: NSViewController {
                 return
             }
             
-            self.presentErrorAlert(errorMessage: "Error Reason: \((error as! APNSError).reason)")
+            guard let apnsError = error as? APNSError else { return }
+            
+            let errorCode = apnsError.errorCode ?? 0
+            let errorMessage = errorCode == 0 ? "Error Reason: \(apnsError.reason)" : "Error Reason: \(errorCode) - \(apnsError.reason)"
+            self.presentErrorAlert(errorMessage: errorMessage)
         }
         
         payloadTextField.stringValue = ""

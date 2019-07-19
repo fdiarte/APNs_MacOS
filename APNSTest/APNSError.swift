@@ -10,4 +10,10 @@ import Foundation
 
 struct APNSError: Error, Decodable {
     let reason: String
+    var errorCode: Int?
+    
+    init(reason: String, errorCode: Int? = nil) {
+        self.reason = reason
+        self.errorCode = errorCode
+    }
 }

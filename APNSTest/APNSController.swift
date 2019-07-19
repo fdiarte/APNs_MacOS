@@ -36,7 +36,7 @@ class APNSController {
         request.allHTTPHeaderFields = headers
         request.httpBody = Data(payload.utf8)
         
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 failure(error)
                 return
@@ -56,13 +56,15 @@ class APNSController {
                     return
                 }
                 
-                guard let apnsError = try? JSONDecoder().decode(APNSError.self, from: data) else {
+                guard var apnsError = try? JSONDecoder().decode(APNSError.self, from: data) else {
                     let error = APNSError(reason: "Data response is in wrong format")
                     print(decodedString)
                     failure(error)
                     return
                 }
                 
+                let errorCode = (response as? HTTPURLResponse)?.statusCode
+                apnsError.errorCode = errorCode
                 print(decodedString)
                 failure(apnsError)
             }
