@@ -706,17 +706,17 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="APNSPusher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="666" height="281"/>
+                        <rect key="frame" x="0.0" y="0.0" width="666" height="303"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjN-Pd-tQd">
-                                <rect key="frame" x="25" y="245" width="616" height="21"/>
+                                <rect key="frame" x="25" y="267" width="616" height="21"/>
                                 <subviews>
                                     <popUpButton horizontalHuggingPriority="249" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Eul-8Y-zAo">
                                         <rect key="frame" x="-2" y="-2" width="498" height="23"/>
                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="RQe-Qv-jx1" id="FsE-Le-QnJ">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="menu"/>
+                                            <font key="font" metaFont="system"/>
                                             <menu key="menu" id="OSZ-DN-hhI">
                                                 <items>
                                                     <menuItem title="Item 1" state="on" id="RQe-Qv-jx1"/>
@@ -753,13 +753,13 @@
                                 </customSpacing>
                             </stackView>
                             <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aD-44-blP">
-                                <rect key="frame" x="25" y="212" width="616" height="21"/>
+                                <rect key="frame" x="25" y="234" width="616" height="21"/>
                                 <subviews>
                                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NHG-Pw-q3R">
                                         <rect key="frame" x="-2" y="-3" width="498" height="25"/>
                                         <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="kTE-yL-2z0" id="E5Z-PB-xVj">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="menu"/>
+                                            <font key="font" metaFont="system"/>
                                             <menu key="menu" id="5Kb-n4-TiJ">
                                                 <items>
                                                     <menuItem title="Item 1" state="on" id="kTE-yL-2z0"/>
@@ -806,7 +806,7 @@
                                 </connections>
                             </button>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jij-iR-SRT">
-                                <rect key="frame" x="476" y="144" width="167" height="24"/>
+                                <rect key="frame" x="476" y="166" width="167" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="Bgc-Ex-qiI">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -819,7 +819,7 @@
                                 </connections>
                             </segmentedControl>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jg3-NA-xTr">
-                                <rect key="frame" x="19" y="172" width="142" height="32"/>
+                                <rect key="frame" x="19" y="194" width="142" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="Aby-bT-nyq"/>
                                 </constraints>
@@ -832,7 +832,7 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yQT-9b-zzN">
-                                <rect key="frame" x="163" y="181" width="418" height="17"/>
+                                <rect key="frame" x="163" y="203" width="418" height="17"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="BEL-2l-sdY">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -840,10 +840,10 @@
                                 </textFieldCell>
                             </textField>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h03-zm-hgr">
-                                <rect key="frame" x="25" y="142" width="298" height="26"/>
+                                <rect key="frame" x="25" y="167" width="298" height="22"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EvP-eI-Tbd">
-                                        <rect key="frame" x="0.0" y="2" width="145" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="145" id="TCZ-CU-lmp"/>
                                         </constraints>
@@ -854,7 +854,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MZR-DO-yT8">
-                                        <rect key="frame" x="153" y="2" width="145" height="22"/>
+                                        <rect key="frame" x="153" y="0.0" width="145" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="145" id="eIE-gq-6LB"/>
                                         </constraints>
@@ -875,7 +875,7 @@
                                 </customSpacing>
                             </stackView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qao-Ru-Hgf">
-                                <rect key="frame" x="585" y="172" width="62" height="32"/>
+                                <rect key="frame" x="585" y="194" width="62" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="xEP-4t-5aU"/>
                                 </constraints>
@@ -906,12 +906,27 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oRL-vx-7mQ">
+                                <rect key="frame" x="476" y="140" width="167" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="rounded" trackingMode="selectOne" id="RBJ-hy-y2h">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="Alert" width="80" selected="YES"/>
+                                        <segment label="Background" width="80" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="pushTypeValueChanged:" target="XfG-lQ-9wD" id="r8c-6r-EwB"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
                             <constraint firstItem="KEN-4d-yxU" firstAttribute="leading" secondItem="RrO-5p-kLc" secondAttribute="leading" id="2rc-K8-FEy"/>
                             <constraint firstItem="yQT-9b-zzN" firstAttribute="leading" secondItem="Jg3-NA-xTr" secondAttribute="trailing" constant="10" id="3oE-yt-GyQ"/>
                             <constraint firstItem="yQT-9b-zzN" firstAttribute="centerY" secondItem="Jg3-NA-xTr" secondAttribute="centerY" id="4ha-Cm-ede"/>
+                            <constraint firstItem="oRL-vx-7mQ" firstAttribute="top" secondItem="h03-zm-hgr" secondAttribute="bottom" constant="4" id="4kI-fm-qPl"/>
                             <constraint firstAttribute="trailing" secondItem="hjN-Pd-tQd" secondAttribute="trailing" constant="25" id="B6u-pz-bgC"/>
+                            <constraint firstItem="RrO-5p-kLc" firstAttribute="top" secondItem="oRL-vx-7mQ" secondAttribute="bottom" constant="12" id="D4u-g2-PDy"/>
                             <constraint firstAttribute="bottom" secondItem="Hmu-yD-91f" secondAttribute="bottom" constant="12" id="DMj-rk-79J"/>
                             <constraint firstItem="jij-iR-SRT" firstAttribute="trailing" secondItem="4aD-44-blP" secondAttribute="trailing" id="HOQ-H3-3Rt"/>
                             <constraint firstItem="qao-Ru-Hgf" firstAttribute="top" secondItem="73o-E6-iBv" secondAttribute="bottom" constant="12" id="I1R-YG-NTl"/>
@@ -920,7 +935,7 @@
                             <constraint firstItem="Hmu-yD-91f" firstAttribute="trailing" secondItem="jij-iR-SRT" secondAttribute="trailing" id="Jvc-HJ-9K3"/>
                             <constraint firstItem="hjN-Pd-tQd" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="15" id="KzK-pp-nhB"/>
                             <constraint firstItem="4aD-44-blP" firstAttribute="leading" secondItem="hjN-Pd-tQd" secondAttribute="leading" id="PJE-44-cuA"/>
-                            <constraint firstItem="h03-zm-hgr" firstAttribute="top" secondItem="Jg3-NA-xTr" secondAttribute="bottom" constant="11" id="T78-Nt-FrG"/>
+                            <constraint firstItem="h03-zm-hgr" firstAttribute="top" secondItem="Jg3-NA-xTr" secondAttribute="bottom" constant="12" id="T78-Nt-FrG"/>
                             <constraint firstItem="4aD-44-blP" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="48" id="Uis-PO-TgJ"/>
                             <constraint firstItem="RrO-5p-kLc" firstAttribute="trailing" secondItem="jij-iR-SRT" secondAttribute="trailing" id="VlS-UD-Co7"/>
                             <constraint firstItem="h03-zm-hgr" firstAttribute="leading" secondItem="Jg3-NA-xTr" secondAttribute="leading" id="Wva-Sv-yCO"/>
@@ -933,9 +948,9 @@
                             <constraint firstItem="hjN-Pd-tQd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="25" id="hzC-cL-zTJ"/>
                             <constraint firstItem="KEN-4d-yxU" firstAttribute="centerY" secondItem="Hmu-yD-91f" secondAttribute="centerY" id="jkI-N0-LKQ"/>
                             <constraint firstItem="Jg3-NA-xTr" firstAttribute="leading" secondItem="4aD-44-blP" secondAttribute="leading" id="l0v-dq-W14"/>
+                            <constraint firstItem="oRL-vx-7mQ" firstAttribute="centerX" secondItem="jij-iR-SRT" secondAttribute="centerX" id="n7p-tb-3af"/>
                             <constraint firstItem="jij-iR-SRT" firstAttribute="top" secondItem="Jg3-NA-xTr" secondAttribute="bottom" constant="12" id="rH8-pP-074"/>
                             <constraint firstItem="RrO-5p-kLc" firstAttribute="leading" secondItem="h03-zm-hgr" secondAttribute="leading" id="u6s-m9-Eah"/>
-                            <constraint firstItem="RrO-5p-kLc" firstAttribute="top" secondItem="h03-zm-hgr" secondAttribute="bottom" constant="12" id="uQg-NY-alu"/>
                             <constraint firstItem="Jg3-NA-xTr" firstAttribute="top" secondItem="4aD-44-blP" secondAttribute="bottom" constant="12" id="yeh-tK-WOz"/>
                         </constraints>
                     </view>

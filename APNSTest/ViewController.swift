@@ -18,6 +18,11 @@ enum AddItemContext {
     case contact
 }
 
+enum APNSPushType: String {
+    case alert
+    case background
+}
+
 class ViewController: NSViewController {
     
     // MARK: - Outlets
@@ -38,6 +43,7 @@ class ViewController: NSViewController {
     var contacts: [Contact]?
     var apps: [App]?
     var apnsEnviornment: APNSEnviornment = .sandbox
+    var pushType: APNSPushType = .alert
     
     private let apnsController = APNSController()
     
@@ -251,6 +257,7 @@ class ViewController: NSViewController {
                                         teamId: teamId,
                                         keyId: keyId,
                                         apnsEnviornment: apnsEnviornment,
+                                        pushType: pushType.rawValue,
                                         success: { [weak self] in
                                             guard let self = self else { return }
                                             
@@ -289,10 +296,15 @@ class ViewController: NSViewController {
         notificationSuccessLabel.stringValue = ""
         enviornmentSegmentedControl.selectedSegment = 0
         apnsEnviornment = .sandbox
+        pushType = .alert
     }
     
     @IBAction func enviornmentValueChanged(_ sender: NSSegmentedControl) {
         apnsEnviornment = sender.indexOfSelectedItem == 0 ? .sandbox : .production
+    }
+    
+    @IBAction func pushTypeValueChanged(_ sender: NSSegmentedControl) {
+        pushType = sender.indexOfSelectedItem == 0 ? .alert : .background
     }
 }
 

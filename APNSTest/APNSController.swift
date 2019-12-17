@@ -14,7 +14,7 @@ class APNSController {
     private let dateKey = "ISSUED_DATE"
     private var token: String? = nil
     
-    func sendNotification(contact: String, bundleId: String, payload: String, privateKey: String, teamId: String, keyId: String, apnsEnviornment: APNSEnviornment, success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
+    func sendNotification(contact: String, bundleId: String, payload: String, privateKey: String, teamId: String, keyId: String, apnsEnviornment: APNSEnviornment, pushType: String, success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
         
         let urlString = apnsEnviornment == .sandbox ? "https://api.sandbox.push.apple.com:443/3/device/" : "https://api.push.apple.com:443/3/device/"
         
@@ -29,6 +29,7 @@ class APNSController {
                                          "Authorization": "bearer \(apnsToken)",
                                          "apns-expiration": "0",
                                          "apns-priority": "10",
+                                         "apns-push-type": pushType,
                                          "apns-topic": bundleId]
         
         var request = URLRequest(url: url)
